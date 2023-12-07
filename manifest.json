@@ -1,12 +1,20 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Örnek Eklenti",
   "version": "1.0",
   "description": "Bu eklenti bir örnektir.",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "browser_action": {
     "default_popup": "popup.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["ui.js","storage.js","weather.js","app.js"]
+    }
+  ]
 }
+
